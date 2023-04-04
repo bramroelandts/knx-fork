@@ -250,6 +250,7 @@ module.exports = machina.Fsm.extend({
         }
       },
       _onExit() {
+        clearTimeout(this.idletimer);
         clearTimeout(this.disconnecttimer);
       },
       inbound_DISCONNECT_RESPONSE(datagram) {
